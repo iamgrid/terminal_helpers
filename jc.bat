@@ -19,6 +19,7 @@ ECHO              [96m 25 [97m   025 Root
 ECHO              [96m 25a [97m  025 Admin Center
 ECHO              [96m 25c [97m  025 Client
 ECHO.
+ECHO              [96m r [97m    Run 'npm run reactDev'
 ECHO              [96m mp [97m   Run 'more package.json'
 ECHO              [96m tscp [97m Type check entire project
 ECHO.
@@ -27,7 +28,7 @@ ECHO.
 ECHO ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
 
 SET /P M=?? Type a shorthand then press ENTER: 
-SET shorthands=42 42r 42s 46 46t 25 25a 25c mp tscp q x
+SET shorthands=42 42r 42s 46 46t 25 25a 25c r mp tscp q x
 FOR %%G IN (%shorthands%) DO (
             IF /I "%M%"=="%%~G" GOTO :MATCH
 )
@@ -62,6 +63,9 @@ cd /d e:\connexa\cxa025\cxa025-admin-center\
 GOTO :EXIT
 :25c
 cd /d e:\connexa\cxa025\cxa025-client\
+GOTO :EXIT
+:r
+npm run reactDev
 GOTO :EXIT
 :mp
 more package.json
