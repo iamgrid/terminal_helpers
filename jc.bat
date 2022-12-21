@@ -8,6 +8,10 @@ ECHO [0mÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 ECHO ³[92m        CXA frequently used folders - [7m jc.bat [0m       ³
 ECHO [0mÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
 ECHO.
+ECHO              [96m 25 [97m   025 Root
+ECHO              [96m 25a [97m  025 Admin Center
+ECHO              [96m 25c [97m  025 Client
+ECHO.
 ECHO              [96m 42 [97m   042 Root
 ECHO              [96m 42r [97m  042 React App
 ECHO              [96m 42s [97m  042 Host Suitelet
@@ -15,9 +19,7 @@ ECHO.
 ECHO              [96m 46 [97m   046 Root
 ECHO              [96m 46t [97m  046 Types
 ECHO.
-ECHO              [96m 25 [97m   025 Root
-ECHO              [96m 25a [97m  025 Admin Center
-ECHO              [96m 25c [97m  025 Client
+ECHO              [96m 52 [97m   052 Root
 ECHO.
 ECHO              [96m r [97m    Run 'npm run reactDev'
 ECHO              [96m mp [97m   Run 'more package.json'
@@ -28,7 +30,7 @@ ECHO.
 ECHO ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
 
 SET /P M=?? Type a shorthand then press ENTER: 
-SET shorthands=42 42r 42s 46 46t 25 25a 25c r mp tscp q x
+SET shorthands=42 42r 42s 46 46t 25 25a 25c 52 r mp tscp q x
 FOR %%G IN (%shorthands%) DO (
             IF /I "%M%"=="%%~G" GOTO :MATCH
 )
@@ -40,6 +42,15 @@ FOR %%G IN (%shorthands%) DO (
 	ECHO ?? Switching to [96m%M%[0m ...
 	GOTO :%M%
 
+:25
+cd /d e:\connexa\cxa025\
+GOTO :EXIT
+:25a
+cd /d e:\connexa\cxa025\cxa025-admin-center\
+GOTO :EXIT
+:25c
+cd /d e:\connexa\cxa025\cxa025-client\
+GOTO :EXIT
 :42
 cd /d e:\connexa\cxa042r-sales-manager-react\
 GOTO :EXIT
@@ -55,14 +66,8 @@ GOTO :EXIT
 :46t
 cd /d e:\connexa\cxa046-api-types\
 GOTO :EXIT
-:25
-cd /d e:\connexa\cxa025\
-GOTO :EXIT
-:25a
-cd /d e:\connexa\cxa025\cxa025-admin-center\
-GOTO :EXIT
-:25c
-cd /d e:\connexa\cxa025\cxa025-client\
+:52
+cd /d e:\connexa\cxa052-work-site-displays\
 GOTO :EXIT
 :r
 npm run reactDev
