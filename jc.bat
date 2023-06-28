@@ -2,7 +2,7 @@
 @ECHO OFF
 ::CLS
 
-SET shorthands=42 42r 46 46t 25 25a 25c 52 r qr mp tscp q x
+SET shorthands=42 42r 46 46t 25 25a 25c 52 r lr qr mp tscp q x
 
 :: %1 is the first argument provided at execution
 IF "%~1"=="" GOTO :INIT
@@ -42,7 +42,8 @@ ECHO              [96m 46 [97m   046 Root
 ECHO              [96m 46t [97m  046 Types
 ECHO.
 ECHO              [96m 52 [97m   052 Root
-
+ECHO.
+ECHO              [96m lr [97m   local-restlet-relay
 ECHO              [96m qr [97m   quick-rest-api
 ECHO.
 ECHO              [96m r [97m    Run 'npm run reactDev'
@@ -80,6 +81,9 @@ cd /d e:\connexa\cxa052-work-site-displays\
 GOTO :EXIT
 :r
 npm run reactDev
+GOTO :EXIT
+:lr
+cd /d e:\connexa\local-restlet-relay\functions\
 GOTO :EXIT
 :qr
 cd /d e:\personal\nodejs-quick-rest-api\
